@@ -9,8 +9,8 @@ int main() {
     cin >> s;
 
     int sum =0;
-    for(int i=s.length()-1; i>=0; i--){
-        if(s[i] == '1'){
+    for(int i=0; i< s.length(); i++){
+        if(s[s.length() - i -1] == '1'){
             sum += pow(2, i);
         }
     }
