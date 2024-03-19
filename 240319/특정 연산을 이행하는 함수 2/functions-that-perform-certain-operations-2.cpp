@@ -5,7 +5,7 @@ using namespace std;
 int main() {
     double a, b, c;
     cin >> a >> b >> c;
-    int tmp;
+    double tmp;
     if(a<c){
         tmp = a;
         a = c;
