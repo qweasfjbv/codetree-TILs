@@ -22,10 +22,7 @@ int main() {
         b = tmp;
     }
 
-    int tmpc = (int)(c*10);
-    if(tmpc%10 >= 5) tmpc = tmpc/10+1;
-    else tmpc = tmpc/10;
 
-    cout << (int)a + 1 << " " << (int)b << " " << tmpc;
+    cout << (int)a + 1 << " " << (int)b << " " << (int)(c+0.5);
     return 0;
 }
