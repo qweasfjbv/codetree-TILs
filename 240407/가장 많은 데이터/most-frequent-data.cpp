@@ -20,10 +20,10 @@ int m = -1;
             map[s] = 1;
         else map[s] = map[s] + 1;
 
+    }
         for(auto k : map){
             m = max(k.second, m);
         }
-    }
 
     cout << m;
 
