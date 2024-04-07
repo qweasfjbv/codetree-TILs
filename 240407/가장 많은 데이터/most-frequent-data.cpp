@@ -1,0 +1,28 @@
+#include <iostream>
+#include <unordered_map>
+#include <cmath>
+using namespace std;
+
+int main() {
+    
+    unordered_map<string, int> map;
+
+    int n; string s;
+
+int m = -1;
+    cin >> n;
+    for(int i=0; i<n; i++){
+        cin >> s;
+        if(map.find(s) == map.end())
+            map[s] = 1;
+        else map[s] = map[s] + 1;
+
+        for(auto k : map){
+            m = max(k.second, m);
+        }
+    }
+
+    cout << m;
+
+    return 0;
+}
