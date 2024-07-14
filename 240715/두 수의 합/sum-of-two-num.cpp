@@ -26,6 +26,9 @@ int main() {
     
 
     for(auto elem : _map){
+    if(k%2== 0 && elem.first == k/2) {
+        sum += elem.second * (elem.second-1)/2;
+    }
         if(_map[k-elem.first] != 0) {
             sum += elem.second * _map[k-elem.first];
             _map[k-elem.first] = 0;
