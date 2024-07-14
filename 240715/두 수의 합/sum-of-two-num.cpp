@@ -11,12 +11,13 @@ int main() {
     ios::sync_with_stdio(0);
 
 
+    int tmp;
     // Input
     cin >> n >> k;
     for(int i=0; i<n; i++){
-        cin >> n;
-        if(_map[n] != 0) _map[n]++;
-        else _map[n] = 1;
+        cin >> tmp;
+        if(_map[tmp] != 0) _map[tmp]++;
+        else _map[tmp] = 1;
 
         
     }
