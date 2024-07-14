@@ -15,19 +15,25 @@ int main() {
 
 
     ll tmp;
-    ll sum = 0;
     // Input
     cin >> n >> k;
     for(int i=0; i<n; i++){
         cin >> tmp;
-        ll dif = k-tmp;
-        
-        sum += _map[dif];
-
         _map[tmp]++;
     }
 
-    
+    ll sum = 0;
+
+    for(auto elem : _map){
+        if(k%2== 0 && elem.first == k/2) {
+            sum += elem.second * (elem.second-1)/2;
+            continue;
+        }
+
+        ll dif = k-elem.first;
+        sum += elem.second * _map[dif];
+        _map[dif] = 0;
+    }
 
 
     // Output
