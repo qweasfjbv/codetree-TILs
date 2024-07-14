@@ -4,7 +4,8 @@ using namespace std;
 
 typedef long long int ll;
 
-int n, k;
+int n;
+ll k;
 unordered_map<ll, int> _map;
 
 int main() {
