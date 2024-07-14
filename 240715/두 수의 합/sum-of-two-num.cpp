@@ -2,8 +2,10 @@
 #include <unordered_map>
 using namespace std;
 
+typedef long long int ll;
+
 int n, k;
-unordered_map<int, int> _map;
+unordered_map<ll, int> _map;
 
 int main() {
     
@@ -11,7 +13,7 @@ int main() {
     ios::sync_with_stdio(0);
 
 
-    int tmp;
+    ll tmp;
     // Input
     cin >> n >> k;
     for(int i=0; i<n; i++){
@@ -22,7 +24,7 @@ int main() {
         
     }
 
-    int sum = 0;
+    ll sum = 0;
     
 
     for(auto elem : _map){
