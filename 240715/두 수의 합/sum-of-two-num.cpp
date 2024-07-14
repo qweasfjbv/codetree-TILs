@@ -1,9 +1,9 @@
 #include <iostream>
-#include <map>
+#include <unordered_map>
 using namespace std;
 
 int n, k;
-map<int, int> _map;
+unordered_map<int, int> _map;
 
 int main() {
     
@@ -22,14 +22,9 @@ int main() {
     
 
     for(auto elem : _map){
-        if(elem.first > k/2) break;
-        else if(k%2==0 && elem.first >= k/2){
-            sum += elem.second * (elem.second -1)/2;
-            break;
-        }
-
-        if(_map.find(elem.first) != _map.end()) {
-            sum += elem.second * _map[elem.first];
+        if(_map.find(k-elem.first) != _map.end()) {
+            sum += elem.second * _map[k-elem.first];
+            _map.erase(k-elem.first);
         }
     }
 
