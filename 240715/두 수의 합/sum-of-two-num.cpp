@@ -24,7 +24,7 @@ int main() {
     for(auto elem : _map){
         if(_map.find(k-elem.first) != _map.end()) {
             sum += elem.second * _map[k-elem.first];
-            _map.erase(k-elem.first);
+            _map[k-elem.first] = 0;
         }
     }
 
