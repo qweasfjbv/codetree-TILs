@@ -15,29 +15,19 @@ int main() {
 
 
     ll tmp;
+    ll sum = 0;
     // Input
     cin >> n >> k;
     for(int i=0; i<n; i++){
         cin >> tmp;
-        if(_map[tmp] != 0) _map[tmp]++;
-        else _map[tmp] = 1;
-
+        ll dif = k-tmp;
         
+        sum += _map[dif];
+
+        _map[tmp]++;
     }
 
-    ll sum = 0;
     
-
-    for(auto elem : _map){
-    if(k%2== 0 && elem.first == k/2) {
-        sum += elem.second * (elem.second-1)/2;
-        continue;
-    }
-        if(_map[k-elem.first] != 0) {
-            sum += elem.second * _map[k-elem.first];
-            _map[k-elem.first] = 0;
-        }
-    }
 
 
     // Output
