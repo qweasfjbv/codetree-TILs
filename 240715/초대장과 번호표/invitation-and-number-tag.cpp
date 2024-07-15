@@ -9,38 +9,34 @@ vector<vector<int>> edges;
 
 int n, g, m, t;
 
-void BFS(int idx){
+void BFS(){
 
     cin.tie(0);
     ios::sync_with_stdio(0);
+    
+    while(!uset.empty()){
 
-    // n보다 작은 노드 -> 큰 노드와 연결되어있음
-    // 그냥 BFS 돌림 (중복 가능해야함)
-    if(idx < n) {
-        uset.insert(idx);
-        for(int i=0; i<edges[idx].size(); i++){
-            if(checkset.find(edges[idx][i]) != checkset.end()) continue;
-            BFS(edges[idx][i]);
+        int visit = *uset.begin(); uset.erase(visit);
+        if(visit < n) checkset.insert(visit);
+
+        if(visit < n) {
+            for(int i=0; i<edges[visit].size(); i++){
+                uset.insert(edges[visit][i]);
+            }
+        }
+        else{
+            int cnt = 0;int nextIdx = -1;
+            for(int i=0; i<edges[visit].size(); i++){
+                if(edges[visit][i] >= n) continue;
+                if(checkset.find(edges[visit][i]) != uset.end()) cnt++;
+                else nextIdx = edges[visit][i];
+            }
+
+            if(cnt == edges[visit].size()-1) uset.insert(nextIdx);
         }
 
-        return;
     }
 
-    // OFFSET보다 큰 노드 -> 작은 노드와 연결됨
-    // 즉, 한 명 제외하고 전부 초대되어 있어야 다음 노드로 이동가능
-    int cnt = 0;
-    int nextIdx = -1;
-    checkset.insert(idx);
-    for(int i=0; i<edges[idx].size(); i++){
-        if(edges[idx][i] >= n) continue;
-        if(uset.find(edges[idx][i]) != uset.end()) cnt++;
-        else nextIdx = edges[idx][i];
-
-    }
-
-    if(cnt == edges[idx].size()-1) BFS(nextIdx);
-
-    checkset.erase(idx);
     return;
 }
 
@@ -63,9 +59,10 @@ int main() {
         }
     }
 
-    BFS(0);
+    uset.insert(0);
+    BFS();
 
-    cout << uset.size();
+    cout << checkset.size();
     
     return 0;
 }
