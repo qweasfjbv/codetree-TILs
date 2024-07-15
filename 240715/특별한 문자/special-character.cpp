@@ -2,7 +2,6 @@
 using namespace std;
 
 string s;
-char c = -1;
 int a[26];
 
 int main() {
@@ -15,10 +14,14 @@ int main() {
     cin >> s;
     for(int i=s.length()-1; i>=0; i--){
         a[s[i]-'a']++;
-        if(a[s[i]-'a'] == 1) c = s[i];
     }
 
-    if(c == -1) cout << "None";
-    else cout << c;
+    for(int i=0; i<s.length(); i++){
+        if(a[s[i]-'a'] == 1) {
+            cout << s[i]; return 0;
+        }
+    }
+
+    cout << "None" ;
     return 0;
 }
