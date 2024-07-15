@@ -23,15 +23,14 @@ int main() {
 
     for(int i=0; i<k; i++){
         cin >> a >> b;
+        a--; b--;
         changes[i][0] = a; changes[i][1] = b;
     }
 
     
-    for(int t = 0; t<3; t++){
+    for(int j = 0; j<3; j++){
     for(int i=0; i<k; i++){
         a = changes[i][0]; b = changes[i][1];
-        
-        a--; b--;
 
         t = arr[a];
         arr[a] = arr[b];
