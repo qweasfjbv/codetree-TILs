@@ -10,7 +10,10 @@ int n, g, m, t;
 
 void BFS(int idx){
 
-    // OFFSET보다 작은 노두 -> 큰 노드와 연결되어있음
+    cin.tie(0);
+    ios::sync_with_stdio(0);
+    
+    // OFFSET보다 작은 노드 -> 큰 노드와 연결되어있음
     // 그냥 BFS 돌림 (중복 가능해야함)
     if(idx < n) {
         uset.insert(idx);
