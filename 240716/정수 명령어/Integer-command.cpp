@@ -14,7 +14,7 @@ int main() {
     cin >> T;
     for(int j = 0 ;j<T; j++){
         cin >> k;
-
+        oset.clear();
         for(int i=0; i<k; i++){
             cin >> com;
             if(com == 'I'){
