@@ -19,7 +19,7 @@ int main() {
 
     for(int i =0; i<m; i++){
         cin >> a;
-        iter = oset.lower_bound(make_pair(a, a));
+        iter = oset.lower_bound(make_pair(a, 0));
 
         if(iter == oset.end()){
             cout << -1 << ' ' << -1 << '\n';
