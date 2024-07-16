@@ -30,7 +30,8 @@ int main() {
 
         if(nextIter == oset.end() && iter == oset.begin()) break;
         else if(nextIter == oset.end()){
-            time1 = (preIter->second - curPair.second)/ (curPair.first - preIter->first);
+            time1 = preIter->second - curPair.second == 0 ? -1 : (float)(curPair.first - preIter->first)/(preIter->second - curPair.second);
+            
             if(time1 > 0 &&  time1 <= T){
             oset.erase(*preIter);
             }
@@ -39,7 +40,8 @@ int main() {
             }
         }
         else if(iter == oset.begin()){
-            time2 = (curPair.second - nextIter->second)/(nextIter->first - curPair.first);
+            time2 = curPair.second - nextIter->second == 0 ? -1 : (float)(nextIter->first - curPair.first)/(curPair.second - nextIter->second);
+
             if(time2 > 0 && time2 <= T){
             oset.erase(curPair);
             iter = nextIter;
@@ -50,8 +52,8 @@ int main() {
         }
         else{
             
-            time1 = (float)(preIter->second - curPair.second)/ (curPair.first - preIter->first);
-            time2 = (float)(curPair.second - nextIter->second)/(nextIter->first - curPair.first);
+            time1 = preIter->second - curPair.second == 0 ? -1 : (float)(curPair.first - preIter->first)/(preIter->second - curPair.second);
+            time2 = curPair.second - nextIter->second == 0 ? -1 : (float)(nextIter->first - curPair.first)/(curPair.second - nextIter->second);
 
 
             if(time1 > 0 &&  time1 <= T && time2 > 0 && time2 <= T){
