@@ -3,7 +3,7 @@
 #include <cmath>
 using namespace std;
 
-#define LIMIT 1e9
+#define LIMIT 1e9+1
 
 int n, m, t;
 int value;
@@ -31,7 +31,8 @@ int main() {
         
     }
 
-    cout << _min;
+    if(_min == LIMIT) cout << -1;
+    else cout << _min;
 
 
     return 0;
