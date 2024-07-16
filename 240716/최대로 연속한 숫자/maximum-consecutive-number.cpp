@@ -9,7 +9,6 @@ int rem;
 set<int> oset;
 set<int>::iterator iter;
 map<int, int> umap;
-int _max = -1;
 
 int main() {
 
