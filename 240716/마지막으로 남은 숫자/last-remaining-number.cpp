@@ -12,7 +12,7 @@ int main() {
 
     cin >> n;
     for(int i=0; i<n; i++){
-        cin >> n;
+        cin >> a;
         pq.push(n);
     }
 
@@ -20,7 +20,7 @@ int main() {
     while(pq.size() >= 2){
         a = pq.top(); pq.pop();
         b = pq.top(); pq.pop();
-        if(a-b != 0) pq.push(a-b);
+        if(a!= b) pq.push(a-b);
     }
 
     if(pq.size() == 1){
