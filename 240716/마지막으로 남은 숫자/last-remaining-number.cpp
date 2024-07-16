@@ -13,7 +13,7 @@ int main() {
     cin >> n;
     for(int i=0; i<n; i++){
         cin >> a;
-        pq.push(n);
+        pq.push(a);
     }
 
     int b;
