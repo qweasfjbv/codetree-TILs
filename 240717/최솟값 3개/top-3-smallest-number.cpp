@@ -2,8 +2,11 @@
 #include <queue>
 using namespace std;
 
-int n, a;
-priority_queue<int> pq;
+typedef long long int ll;
+
+int n;
+ll a;
+priority_queue<ll> pq;
 
 int main() {
     
@@ -11,7 +14,7 @@ int main() {
     ios::sync_with_stdio(0);
 
     cin >> n;
-    int mul = 1;
+    ll mul = 1;
     for(int i=0; i<n; i++){
         cin >> a;
         if(i==0 || i ==1){
