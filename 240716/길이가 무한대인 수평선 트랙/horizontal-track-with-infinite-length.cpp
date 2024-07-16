@@ -22,16 +22,17 @@ int main() {
 
     iter=oset.begin();
     while(iter != oset.end()){
-       // cout << iter->first << ", " << iter->second << endl;
+        
         copyIter = iter;
         auto curPair = *(copyIter++);
         nextIter = copyIter--;
         preIter = --copyIter;
 
+        time1 = preIter->second - curPair.second == 0 ? -1 : (float)(curPair.first - preIter->first)/(preIter->second - curPair.second);
+        time2 = curPair.second - nextIter->second == 0 ? -1 : (float)(nextIter->first - curPair.first)/(curPair.second - nextIter->second);
+
         if(nextIter == oset.end() && iter == oset.begin()) break;
-        else if(nextIter == oset.end()){
-            time1 = preIter->second - curPair.second == 0 ? -1 : (float)(curPair.first - preIter->first)/(preIter->second - curPair.second);
-            
+        else if(nextIter == oset.end()){        
             if(time1 > 0 &&  time1 <= T){
             oset.erase(*preIter);
             }
@@ -40,7 +41,6 @@ int main() {
             }
         }
         else if(iter == oset.begin()){
-            time2 = curPair.second - nextIter->second == 0 ? -1 : (float)(nextIter->first - curPair.first)/(curPair.second - nextIter->second);
 
             if(time2 > 0 && time2 <= T){
             oset.erase(curPair);
@@ -51,11 +51,6 @@ int main() {
             }
         }
         else{
-            
-            time1 = preIter->second - curPair.second == 0 ? -1 : (float)(curPair.first - preIter->first)/(preIter->second - curPair.second);
-            time2 = curPair.second - nextIter->second == 0 ? -1 : (float)(nextIter->first - curPair.first)/(curPair.second - nextIter->second);
-
-
             if(time1 > 0 &&  time1 <= T && time2 > 0 && time2 <= T){
                 if(time1 < time2)
                     oset.erase(*preIter);
