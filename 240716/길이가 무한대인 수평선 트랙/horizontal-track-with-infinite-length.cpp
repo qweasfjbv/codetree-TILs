@@ -6,7 +6,7 @@ int N, T, a, b;
 set<pair<int,int>> oset;
 set<pair<int,int>>::iterator iter, copyIter, preIter, nextIter;
 
-float time1, time2;
+int time1, time2;
 
 int main() {
     
@@ -28,8 +28,8 @@ int main() {
         nextIter = copyIter--;
         preIter = --copyIter;
 
-        time1 = preIter->second - curPair.second == 0 ? -1 : (float)(curPair.first - preIter->first)/(preIter->second - curPair.second);
-        time2 = curPair.second - nextIter->second == 0 ? -1 : (float)(nextIter->first - curPair.first)/(curPair.second - nextIter->second);
+        time1 = preIter->second - curPair.second == 0 ? -1 : (curPair.first - preIter->first)/(preIter->second - curPair.second);
+        time2 = curPair.second - nextIter->second == 0 ? -1 : (nextIter->first - curPair.first)/(curPair.second - nextIter->second);
 
         if(nextIter == oset.end() && iter == oset.begin()) break;
         else if(nextIter == oset.end()){        
