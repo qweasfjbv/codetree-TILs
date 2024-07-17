@@ -16,8 +16,8 @@ void func_1(int a, int b){
     
     if(arr[a][1]!= -1) arr[arr[a][1]][0] = curEnd;
     arr[start][0] = a;
+    arr[curEnd][1] = arr[a][1];
     arr[a][1] = start;
-    arr[curEnd][1] = -1;
     arr[curEnd][0] = curEnd-1;
     curEnd++;
 
@@ -42,11 +42,12 @@ void func_2(int a, int b){
 }
 
 void func_3(int a){
+    /*
     if(arr[a][0] == -1 || arr[a][1] == -1){
         cout << -1 << '\n';
         return;
     }
-
+*/
     cout << arr[a][0] << ' ' << arr[a][1] << '\n';
 }
 
