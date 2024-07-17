@@ -77,8 +77,6 @@ void func_1(int a, int b){
 
 void func_2(int a){
     nodes[a]->erase();
-
-    delete(nodes[a]);
 }
 
 void func_3(int a, int b, int c){
@@ -109,10 +107,10 @@ int main()
     for(int i=0; i<n; i++){
         cin >> s;
         nodes.push_back(new Node{s});  umap[s] = i;
-        lines[(i)/x]->push_back(nodes[i]);
+        lines[(i+x)/x-1]->push_back(nodes[i]);
     }
 
-    for(int i=0; i<m; i++){
+    for(int i=0; i<q; i++){
         cin >> com;
         switch(com){
             case 1:
