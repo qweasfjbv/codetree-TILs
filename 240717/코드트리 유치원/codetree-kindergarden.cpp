@@ -17,6 +17,7 @@ void func_1(int a, int b){
     arr[start][0] = a;
     arr[a][1] = start;
     arr[curEnd][1] = -1;
+    arr[curEnd][0] = curEnd-1;
     curEnd++;
 
 }
@@ -33,6 +34,7 @@ void func_2(int a, int b){
     arr[start][0] = arr[a][0];
     if(arr[a][0] != -1) arr[arr[a][0]][1] = start;
     arr[curEnd][1] = a;
+    arr[curEnd][0] = curEnd-1;
     arr[a][0] = curEnd;
     curEnd++;
     
