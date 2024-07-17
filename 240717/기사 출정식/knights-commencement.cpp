@@ -1,8 +1,11 @@
 #include <iostream>
+#include <unordered_map>
 using namespace std;
 
 int n, m, a;
 int arr[100002][2];
+unordered_map<int, int> umap;
+int value[100002];
 
 int main() {
     cin.tie(0);
@@ -10,33 +13,32 @@ int main() {
 
     cin >>n >> m;
     
-    for(int i=0; i<=n+1; i++){
-        arr[i][0] = arr[i][1] = -1;
+    for(int i=1; i<=n; i++){
+        arr[i][0] = i-1;
+        arr[i][1] = i+1;
     }
-
+    arr[1][0] = n;
+    arr[n][1] = 1;
 
     int pre = 0;
     int first;
     for(int i=1; i<=n; i++){
         cin >> a;
-        if(i==1) first = a;
-        
-        arr[pre][1] = a;
-        arr[a][0] = pre;
-        pre = a;
+        umap[a] = i;
+        value[i] = a;
     }
-
-    arr[pre][1] = first;
-    arr[first][0] = pre;
 
 
     for(int i=0; i<m; i++){
         cin >> a;
 
-        arr[arr[a][0]][1] = arr[a][1];
-        arr[arr[a][1]][0] = arr[a][0];
 
-        cout << arr[a][1] << ' ' << arr[a][0] << '\n';
+        arr[arr[umap[a]][0]][1] = arr[umap[a]][1];
+        arr[arr[umap[a]][1]][0] = arr[umap[a]][0];
+
+
+        cout << value[arr[umap[a]][1]] << ' ' << value[arr[umap[a]][0]] << '\n';
+
     }
     
     return 0;
