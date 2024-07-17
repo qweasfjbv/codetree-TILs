@@ -42,12 +42,12 @@ void func_2(int a, int b){
 }
 
 void func_3(int a){
-    /*
+
     if(arr[a][0] == -1 || arr[a][1] == -1){
         cout << -1 << '\n';
         return;
     }
-*/
+
     cout << arr[a][0] << ' ' << arr[a][1] << '\n';
 }
 
