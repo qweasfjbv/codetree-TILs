@@ -92,6 +92,7 @@ int main() {
             break;
             case 3:
             cin >> a;
+            return 0;
             func_3(umap[a]);
             break;
         }
