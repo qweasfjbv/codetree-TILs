@@ -30,9 +30,11 @@ int main() {
     arr[first][0] = pre;
 
 
-
     for(int i=0; i<m; i++){
         cin >> a;
+
+        arr[arr[a][0]][1] = arr[a][1];
+        arr[arr[a][1]][0] = arr[a][0];
 
         cout << arr[a][1] << ' ' << arr[a][0] << '\n';
     }
