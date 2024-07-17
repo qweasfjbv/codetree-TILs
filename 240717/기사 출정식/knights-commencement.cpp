@@ -16,24 +16,23 @@ int main() {
 
 
     int pre = 0;
+    int first;
     for(int i=1; i<=n; i++){
         cin >> a;
+        if(i==1) first = a;
         
         arr[pre][1] = a;
         arr[a][0] = pre;
         pre = a;
     }
 
-    arr[n][1] = 1;
-    arr[1][0] = n;
+    arr[pre][1] = first;
+    arr[first][0] = pre;
 
 
 
     for(int i=0; i<m; i++){
         cin >> a;
-
-        arr[arr[a][0]][1] = arr[a][1];
-        arr[arr[a][1]][0] = arr[a][0];
 
         cout << arr[a][1] << ' ' << arr[a][0] << '\n';
     }
