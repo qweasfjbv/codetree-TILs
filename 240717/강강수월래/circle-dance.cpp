@@ -26,13 +26,13 @@ void func_2(int a, int b){
     // B의 좌측 노드 -> A 연결
     // A의 좌측 노드 -> B 연결
 
-    int ar = arr[a][1]; int bl = arr[b][0];
+    int al = arr[a][0]; int bl = arr[b][0];
 
     arr[bl][1] = a;
     arr[a][0] = bl;
 
-    arr[ar][1] = b;
-    arr[b][0] = ar;
+    arr[al][1] = b;
+    arr[b][0] = al;
 }
 
 void func_3(int a){
@@ -92,7 +92,6 @@ int main() {
             break;
             case 3:
             cin >> a;
-            return 0;
             func_3(umap[a]);
             break;
         }
