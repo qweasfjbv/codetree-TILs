@@ -15,10 +15,11 @@ void func_1(int a, int b){
     }
     
     if(arr[a][1]!= -1) arr[arr[a][1]][0] = curEnd;
-    arr[start][0] = a;
+
     arr[curEnd][1] = arr[a][1];
     arr[a][1] = start;
     arr[curEnd][0] = curEnd-1;
+    arr[start][0] = a;
     curEnd++;
 
 }
@@ -32,10 +33,11 @@ void func_2(int a, int b){
         curEnd++;
     }
 
-    arr[start][0] = arr[a][0];
     if(arr[a][0] != -1) arr[arr[a][0]][1] = start;
+    
     arr[curEnd][1] = a;
     arr[curEnd][0] = curEnd-1;
+    arr[start][0] = arr[a][0];
     arr[a][0] = curEnd;
     curEnd++;
     
