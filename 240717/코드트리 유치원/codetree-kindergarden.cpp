@@ -13,7 +13,8 @@ void func_1(int a, int b){
         arr[curEnd][1] = curEnd+1;
         curEnd++;
     }
-
+    
+    if(arr[a][1]!= -1) arr[arr[a][1]][0] = curEnd;
     arr[start][0] = a;
     arr[a][1] = start;
     arr[curEnd][1] = -1;
