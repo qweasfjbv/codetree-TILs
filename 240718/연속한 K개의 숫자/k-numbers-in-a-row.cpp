@@ -27,8 +27,8 @@ int main() {
     }
 
     int _min = 100001;
-    for(int i=b; i<=n; i++){
-        _min = min(_min, sum[i]-sum[i-b]);
+    for(int i=k; i<=n; i++){
+        _min = min(_min, sum[i]-sum[i-k]);
     }
 
     cout << _min;
