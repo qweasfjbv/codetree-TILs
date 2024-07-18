@@ -5,7 +5,7 @@ int main() {
     
     string s, t;
     cin >> s >> t;
-    cout << t << s;
+    cout << t << '\n' << s;
 
     return 0;
 }
