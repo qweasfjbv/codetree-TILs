@@ -4,12 +4,15 @@ using namespace std;
 int main() {
     char c;
     int a;
-    cin >> c>> a;
-    if(c=="Y"){
-        cout << (a>=37 ? "A" : "C");
+    int cnt = 0;
+    for(int i=0; i<3; i++){
+        cin >> c>> a;
+        if(c=='Y'){
+            if(a>=37){
+                cnt++;
+            }
+        }
     }
-    else{
-        cout << (a>=37 ? "B" : "D");
-    }
+    cout << (cnt>=2 ? "E" : "N");
     return 0;
 }
