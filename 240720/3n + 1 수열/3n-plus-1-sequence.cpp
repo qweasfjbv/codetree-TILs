@@ -5,6 +5,10 @@ int main() {
     int n;
     cin >> n;
     int cnt=0;
+    
+        if(n==1){
+            cout << 0; return 0;
+        }
     while(true){
         cnt++;
         if(n%2==0) n=n/2;
