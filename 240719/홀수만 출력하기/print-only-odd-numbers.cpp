@@ -6,7 +6,7 @@ int main() {
     int a; 
     for(int i=0; i<n; i++){
         cin >> a;
-        if(a%3==0) cout << a << '\n';
+        if(a%2==1 && a%3==0) cout << a << '\n';
     }
     return 0;
 }
