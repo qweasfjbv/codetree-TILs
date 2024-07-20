@@ -14,7 +14,7 @@ int main() {
 
     int idx = -1;
     for(int i=1000; i>=0; i--){
-        if(arr[i] == 1) idx = i;
+        if(arr[i] == 1){ idx = i; break;}
     }
     cout << idx;
     return 0;
