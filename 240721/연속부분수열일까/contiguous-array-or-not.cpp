@@ -21,6 +21,9 @@ int main() {
         v2.push_back(a);
     }
 
+    if(v1.size() < v2.size()){
+        cout << "No"; return 0;
+    }
     for(int i=0; i<=v1.size()-v2.size(); i++){
         bool once = false;
         for(int j=0; j<v2.size(); j++){
