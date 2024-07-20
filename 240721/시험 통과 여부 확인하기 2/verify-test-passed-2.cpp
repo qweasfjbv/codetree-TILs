@@ -8,7 +8,7 @@ int main() {
     int cnt = 0;
     for(int i=0; i<n; i++){
         cin >> a>> b >> c >> d;
-        if((double)(a+b+c+d)/4>60){
+        if((double)(a+b+c+d)/4>=60){
             cout << "pass\n";
             cnt++;
         }
