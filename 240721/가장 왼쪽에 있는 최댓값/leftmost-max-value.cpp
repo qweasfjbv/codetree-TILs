@@ -14,13 +14,13 @@ int main() {
         v.push_back(a);
     }
 
-    int idx = n-1;
+    int idx = n;
     int rem = -1;
     int _max = -1;
 
     while(idx != 0){
         _max = -1;
-        for(int i=0; i<=idx-1; i++){
+        for(int i=0; i<idx; i++){
             if(_max < v[i]){
                 _max = v[i];
                 rem = i;
