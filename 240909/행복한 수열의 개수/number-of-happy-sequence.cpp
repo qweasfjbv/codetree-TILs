@@ -7,21 +7,39 @@ int cnt = 0;
 
 void CheckVert(int n){
     int prevNum = -1;
+    int seq = 0;
     for(int i=0; i<N; i++){
         if(prevNum == arr[i][n]){
+            seq++;
+        }
+        else 
+        {
+            prevNum = arr[i][n];
+            seq = 1;
+        }
+
+        if(seq == M) {
             cnt++; return;
         }
-        else prevNum = arr[i][n];
     }
 }
 
 void CheckHorz(int n){
     int prevNum = -1;
+    int seq = 0;
     for(int i=0; i<N; i++){
         if(prevNum == arr[n][i]){
+            seq++;
+        }
+        else 
+        {prevNum = arr[n][i];
+        seq = 1;
+        }
+
+        if(seq == M) {
             cnt++; return;
         }
-        else prevNum = arr[n][i];
+
     }
 
 }
