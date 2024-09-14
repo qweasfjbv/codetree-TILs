@@ -55,7 +55,7 @@ void Move(int x,int y, char h){
         }
     }
     else{
-        if(In_Range){
+        if(In_Range(x, y, h)){
              
         square[x-1][y]=(7-front);
         int original_up=up,original_front=front,original_right=rightt;
