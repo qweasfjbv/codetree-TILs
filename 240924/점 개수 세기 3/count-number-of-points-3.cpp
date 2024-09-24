@@ -1,8 +1,10 @@
 #include <iostream>
+#include <unordered_map>
 #include <set>
 using namespace std;
 
 int n, q, a, b;
+unordered_map<int, int> umap;
 set<int> oset;
 
 int main() {
@@ -16,13 +18,14 @@ int main() {
         oset.insert(a);
     }
 
+    int cnt = 0;
+    for(auto iter : oset){
+        umap[iter] = cnt++;
+    }
+
     for(int i=0; i<q; i++){
         cin >> a >> b;
-
-        auto it1 = oset.find(a);
-        auto it2 = oset.find(b);
-
-        cout << distance(it1, it2) + 1 << '\n';
+        cout << umap[b] - umap[a] + 1 << '\n';
     }
 
     return 0;
