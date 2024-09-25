@@ -2,12 +2,12 @@
 using namespace std;
 
 int n, m, k, x, y;
-int arr[100001];
+int arr[100002];
+int seq[100002];
 
 
 int Find(int a){
     if(arr[a] == a) return a;
-    
     return arr[a] = Find(arr[a]);
 }
 
@@ -26,7 +26,7 @@ int main() {
     cin >> n >> m >> k;
     
     for(int i=0;i<=n; i++){
-        arr[i] = 0;
+        arr[i] = i;
     }
     for(int i=0; i<m; i++){
         cin >> x >> y;
@@ -35,12 +35,13 @@ int main() {
 
     bool once = false;
     cin >> x;
+    
+    for(int i=0; i<k ;i++){
+        cin >> seq[i];
+    }   
     for(int i=1; i<k ;i++){
-        cin >> y;
-        x = Find(x);
-        if(x == Find(y)) {
-            continue;
-        }
+        if(Find(seq[i-1]) == Find(seq[i])) continue;
+
         once = true; break;
     }   
 
