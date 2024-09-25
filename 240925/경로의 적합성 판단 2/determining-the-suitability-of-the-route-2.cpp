@@ -7,6 +7,8 @@ int seq[100002];
 
 
 int Find(int a){
+    
+
     if(arr[a] == a) return a;
     return arr[a] = Find(arr[a]);
 }
@@ -34,11 +36,11 @@ int main() {
     }
 
     bool once = false;
-    cin >> x;
     
     for(int i=0; i<k ;i++){
         cin >> seq[i];
     }   
+
     for(int i=1; i<k ;i++){
         if(Find(seq[i-1]) == Find(seq[i])) continue;
 
