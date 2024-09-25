@@ -5,15 +5,17 @@ int n, m;
 int c, a, b;
 int arr[100001];
 
-void Union(int a, int b){
-    arr[a] = b;
-    return;
-}
-
 int Find(int a){
     if(arr[a] == a) return a;
 
     return arr[a] = Find(arr[a]);
+}
+
+void Union(int a, int b){
+    a = Find(a);
+    b = Find(b);
+    arr[a] = b;
+    return;
 }
 
 int main() {
