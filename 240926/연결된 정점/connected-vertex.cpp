@@ -3,7 +3,7 @@ using namespace std;
 
 int arr[100001];
 int sum[100001];
-int a, b, n, m;
+int x, y, n, m;
 char c;
 
 int Find(int a){
@@ -32,12 +32,12 @@ int main() {
     for(int i=0; i<m; i++){
         cin >> c;
         if(c == 'x'){
-            cin >> a >> b;
-            Union(a, b);
+            cin >> x >> y;
+            Union(x, y);
         }
         else{
-            cin >> a;
-            cout << sum[Find(a)] << '\n';
+            cin >> x;
+            cout << sum[Find(x)] << '\n';
         }
     }
 
