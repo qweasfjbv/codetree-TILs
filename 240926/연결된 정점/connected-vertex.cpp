@@ -15,6 +15,7 @@ void Union(int a, int b){
     a = Find(a);
     b = Find(b);
     arr[a] = b;
+    if(a != b)
     sum[b] += sum[a];
 }
 
