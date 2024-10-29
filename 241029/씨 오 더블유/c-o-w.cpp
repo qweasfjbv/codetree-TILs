@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
+typedef long long int ll;
 
-int arr[3] = {0,0,0};
+ll arr[3] = {0,0,0};
 
 int main() {
     cin.tie(0); cout.tie(0);
