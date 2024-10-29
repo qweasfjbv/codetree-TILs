@@ -30,21 +30,28 @@ char c;
         input.push_back(c);
     }
 
-    L[0] = R[N-1] = make_tuple(0,0,0);
     for(int i=0; i<N; i++){
         L[i] = (i!= 0) ? L[i-1] : make_tuple(0,0,0);
         R[N-i-1] = (i!= 0) ? R[N-i] : make_tuple(0,0,0);
         switch(input[i]){
             case 'H':
             get<0>(L[i])++;
-            get<0>(R[N-1-i])++;
             break;
             case 'S':
             get<1>(L[i])++;
-            get<1>(R[N-1-i])++;
             break;
             case 'P':
             get<2>(L[i])++;
+            break;
+        }
+        switch(input[N-i-1]){
+            case 'H':
+            get<0>(R[N-1-i])++;
+            break;
+            case 'S':
+            get<1>(R[N-1-i])++;
+            break;
+            case 'P':
             get<2>(R[N-1-i])++;
             break;
         }
